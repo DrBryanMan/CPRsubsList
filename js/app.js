@@ -190,8 +190,9 @@
   }
 
   function buildPosterHTML(project, type) {
+    const path = "https://raw.githubusercontent.com/DrBryanMan/CPRsubsList/refs/heads/main"
     if (project.poster) {
-      const src = type === "list" ? project.poster : project.cover;
+      const src = type === "list" ? project.poster : path + project.cover;
       return `<img src="${src}" alt="${project.title}">`;
     }
 

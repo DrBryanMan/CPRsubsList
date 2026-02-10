@@ -1,0 +1,65 @@
+[
+  {
+    "poster": "",
+    "cover": "/img/.jpg",
+    "title": "В. Повнометражний фільм",
+    "status": "Заплановано",
+    "episodes": 0,
+    "episodes_total": 1,
+    "work": ["Переклад"]
+  },
+  {
+    "poster": "",
+    "cover": "/img/.jpg",
+    "title": "К. Повнометражний фільм",
+    "status": "Заплановано",
+    "episodes": 0,
+    "episodes_total": 1,
+    "work": ["Переклад"]
+  },
+  {
+    "poster": "",
+    "cover": "/img/.jpg",
+    "title": "А. Спільний проєкт з CloverDub",
+    "status": "Заплановано",
+    "episodes": 13,
+    "episodes_total": 13,
+    "work": ["Переклад", "Оформлення"]
+  },
+  {
+    "poster": "https://cdn.hikka.io/content/anime/log-horizon-2nd-season-d72fa9/SwHQtesrL7dOoWb0kAN8Pw.jpg",
+    "cover": "/img/Лоґ Небокраю.jpg",
+    "title": "Лоґ Небокраю",
+    "status": "Завершено",
+    "episodes": 25,
+    "episodes_total": 25,
+    "work": ["Переклад", "Оформлення"]
+  },
+  {
+    "poster": "https://cdn.hikka.io/content/anime/pokemon-movie-01-mewtwo-no-gyakushuu-8992e2/Gf_Rpf8-iOeYlG1gCsO-dg.jpg",
+    "cover": "/img/Покемони Фільм 1 - Відплата М'ю-ІІ.jpg",
+    "title": "Покемони Фільм 1: Відплата М'ю-ІІ (1998)",
+    "status": "Завершено",
+    "episodes": 1,
+    "episodes_total": 1,
+    "work": ["Переклад", "Оформлення"]
+  },
+  {
+    "poster": "https://cdn.hikka.io/content/anime/urusei-yatsura-f11e94/J3rhlAflJRhD3sgonqaDWA.jpg",
+    "cover": "/img/Нестерпні прибульці.jpg",
+    "title": "Нестерпні прибульці (1981)",
+    "status": "В процесі",
+    "episodes": 1,
+    "episodes_total": 195,
+    "work": ["Переклад", "Оформлення"]
+  },
+  {
+    "poster": "https://cdn.hikka.io/content/anime/jinrui-wa-suitai-shimashita-245779/PYy4sJJqWLvdwhxAXY1wDw.jpg",
+    "cover": "/img/Людство занепало.jpg",
+    "title": "Людство занепало",
+    "status": "В процесі",
+    "episodes": 2,
+    "episodes_total": 12,
+    "work": ["Переклад", "Оформлення"]
+  }
+]

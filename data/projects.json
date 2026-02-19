@@ -20,6 +20,17 @@
   {
     "poster": "",
     "cover": "/img/.jpg",
+    "title": "Г. Летсплей",
+    "status": "В процесі",
+    "episodes": 0,
+    "episodes_total": 1,
+    "lines": 600,
+    "lines_total": 1900,
+    "work": ["Переклад", "Оформлення"]
+  },
+  {
+    "poster": "",
+    "cover": "/img/.jpg",
     "title": "А. Спільний проєкт з CloverDub",
     "status": "Заплановано",
     "episodes": 13,

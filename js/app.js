@@ -167,6 +167,31 @@
     }
   }
 
+  // ===== Progress Info =====
+
+  function getProgressInfo(project) {
+    var isMovie = project.episodes_total === 1;
+    var hasLines = project.lines_total > 0;
+
+    if (isMovie && hasLines) {
+      var linePercent = Math.round((project.lines / project.lines_total) * 100);
+      if (linePercent < 100) {
+        return {
+          percent: linePercent,
+          text: project.lines + ' / ' + project.lines_total + ' рядків'
+        };
+      }
+    }
+
+    var percent = project.episodes_total > 0
+      ? Math.round((project.episodes / project.episodes_total) * 100)
+      : 0;
+    return {
+      percent: percent,
+      text: project.episodes + ' / ' + project.episodes_total + ' еп.'
+    };
+  }
+
   // ===== Helpers =====
 
   function getStatusClass(status) {
@@ -207,7 +232,7 @@
 
   // ===== Card Builders =====
 
-  function buildListCard(project, percent, statusCls, index) {
+  function buildListCard(project, percent, progressText, statusCls, index) {
     var card = document.createElement("div");
     card.className = "project-card fade-in";
     card.style.animationDelay = (index * 0.04) + "s";
@@ -228,7 +253,7 @@
           '<div class="progress-bar-bg">' +
             '<div class="progress-bar-fill fill-' + statusCls + '" data-width="' + percent + '"></div>' +
           '</div>' +
-          '<span class="progress-text">' + project.episodes + ' / ' + project.episodes_total + ' еп.</span>' +
+          '<span class="progress-text">' + progressText + '</span>' +
         '</div>' +
       '</div>' +
       '<div class="project-percent ' + percentCls + '">' + percent + '%</div>';
@@ -236,7 +261,7 @@
     return card;
   }
 
-  function buildGridCard(project, percent, statusCls, index) {
+  function buildGridCard(project, percent, progressText, statusCls, index) {
     var card = document.createElement("div");
     card.className = "project-card fade-in";
     card.style.animationDelay = (index * 0.04) + "s";
@@ -258,7 +283,7 @@
           '<div class="progress-bar-bg">' +
             '<div class="progress-bar-fill fill-' + statusCls + '" data-width="' + percent + '"></div>' +
           '</div>' +
-          '<span class="progress-text">' + project.episodes + ' / ' + project.episodes_total + ' еп.</span>' +
+          '<span class="progress-text">' + progressText + '</span>' +
         '</div>' +
       '</div>';
 
@@ -289,14 +314,14 @@
 
     for (var j = 0; j < filtered.length; j++) {
       var project = filtered[j];
-      var percent = project.episodes_total > 0
-        ? Math.round((project.episodes / project.episodes_total) * 100)
-        : 0;
+      var progressInfo = getProgressInfo(project);
+      var percent = progressInfo.percent;
+      var progressText = progressInfo.text;
       var statusCls = getStatusClass(project.status);
 
       var card = activeView === "grid"
-        ? buildGridCard(project, percent, statusCls, j)
-        : buildListCard(project, percent, statusCls, j);
+        ? buildGridCard(project, percent, progressText, statusCls, j)
+        : buildListCard(project, percent, progressText, statusCls, j);
 
       projectList.appendChild(card);
     }
